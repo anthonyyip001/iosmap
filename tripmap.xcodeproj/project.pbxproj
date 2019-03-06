@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36659D414EE5F328E08E7D7D /* libPods-tripmap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F84981BDCA54F0D4C04D47FF /* libPods-tripmap.a */; };
 		BBAB97F6222FC35E00D651BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAB97F5222FC35E00D651BD /* AppDelegate.swift */; };
-		BBAB97F8222FC35E00D651BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAB97F7222FC35E00D651BD /* ViewController.swift */; };
+		BBAB97F8222FC35E00D651BD /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAB97F7222FC35E00D651BD /* HomeController.swift */; };
 		BBAB97FB222FC35E00D651BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBAB97F9222FC35E00D651BD /* Main.storyboard */; };
 		BBAB97FD222FC35E00D651BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBAB97FC222FC35E00D651BD /* Assets.xcassets */; };
 		BBAB9800222FC35E00D651BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBAB97FE222FC35E00D651BD /* LaunchScreen.storyboard */; };
 		BBAB980B222FC35E00D651BD /* tripmapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAB980A222FC35E00D651BD /* tripmapTests.swift */; };
 		BBAB9816222FC35E00D651BD /* tripmapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAB9815222FC35E00D651BD /* tripmapUITests.swift */; };
+		BBAB9824222FC38200D651BD /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BBAB9823222FC38200D651BD /* Podfile */; };
+		BBAB982B222FC67F00D651BD /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAB982A222FC67F00D651BD /* MenuController.swift */; };
+		BBAB982D222FC6BB00D651BD /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAB982C222FC6BB00D651BD /* ContainerController.swift */; };
+		BBAB982F222FC6CF00D651BD /* MenuOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAB982E222FC6CF00D651BD /* MenuOptionCell.swift */; };
+		BBAB9831222FC6D900D651BD /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAB9830222FC6D900D651BD /* MenuOption.swift */; };
+		BBAB9833222FC6DF00D651BD /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAB9832222FC6DF00D651BD /* Protocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08348A66DA2AC509509087FA /* Pods-tripmap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tripmap.release.xcconfig"; path = "Target Support Files/Pods-tripmap/Pods-tripmap.release.xcconfig"; sourceTree = "<group>"; };
+		912B300F6ED155B119C80327 /* Pods-tripmap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tripmap.debug.xcconfig"; path = "Target Support Files/Pods-tripmap/Pods-tripmap.debug.xcconfig"; sourceTree = "<group>"; };
 		BBAB97F2222FC35E00D651BD /* tripmap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tripmap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBAB97F5222FC35E00D651BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BBAB97F7222FC35E00D651BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BBAB97F7222FC35E00D651BD /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		BBAB97FA222FC35E00D651BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BBAB97FC222FC35E00D651BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBAB97FF222FC35E00D651BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +56,13 @@
 		BBAB9811222FC35E00D651BD /* tripmapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tripmapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBAB9815222FC35E00D651BD /* tripmapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tripmapUITests.swift; sourceTree = "<group>"; };
 		BBAB9817222FC35E00D651BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBAB9823222FC38200D651BD /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BBAB982A222FC67F00D651BD /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		BBAB982C222FC6BB00D651BD /* ContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
+		BBAB982E222FC6CF00D651BD /* MenuOptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuOptionCell.swift; path = ../../../SideMenu/SideMenu/View/MenuOptionCell.swift; sourceTree = "<group>"; };
+		BBAB9830222FC6D900D651BD /* MenuOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuOption.swift; path = ../../../SideMenu/SideMenu/Model/MenuOption.swift; sourceTree = "<group>"; };
+		BBAB9832222FC6DF00D651BD /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = ../../../SideMenu/SideMenu/Utils/Protocols.swift; sourceTree = "<group>"; };
+		F84981BDCA54F0D4C04D47FF /* libPods-tripmap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tripmap.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36659D414EE5F328E08E7D7D /* libPods-tripmap.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,13 +91,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		449CE5D4370B453B124E1D45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F84981BDCA54F0D4C04D47FF /* libPods-tripmap.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7748BC43128C209D651C4BAC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				912B300F6ED155B119C80327 /* Pods-tripmap.debug.xcconfig */,
+				08348A66DA2AC509509087FA /* Pods-tripmap.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BBAB97E9222FC35E00D651BD = {
 			isa = PBXGroup;
 			children = (
+				BBAB9823222FC38200D651BD /* Podfile */,
 				BBAB97F4222FC35E00D651BD /* tripmap */,
 				BBAB9809222FC35E00D651BD /* tripmapTests */,
 				BBAB9814222FC35E00D651BD /* tripmapUITests */,
 				BBAB97F3222FC35E00D651BD /* Products */,
+				7748BC43128C209D651C4BAC /* Pods */,
+				449CE5D4370B453B124E1D45 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,8 +134,11 @@
 		BBAB97F4222FC35E00D651BD /* tripmap */ = {
 			isa = PBXGroup;
 			children = (
+				BBAB9829222FC5CC00D651BD /* View */,
+				BBAB9827222FC5B900D651BD /* Model */,
+				BBAB9826222FC58E00D651BD /* Controller */,
+				BBAB9825222FC58100D651BD /* Utils */,
 				BBAB97F5222FC35E00D651BD /* AppDelegate.swift */,
-				BBAB97F7222FC35E00D651BD /* ViewController.swift */,
 				BBAB97F9222FC35E00D651BD /* Main.storyboard */,
 				BBAB97FC222FC35E00D651BD /* Assets.xcassets */,
 				BBAB97FE222FC35E00D651BD /* LaunchScreen.storyboard */,
@@ -125,6 +165,40 @@
 			path = tripmapUITests;
 			sourceTree = "<group>";
 		};
+		BBAB9825222FC58100D651BD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BBAB9832222FC6DF00D651BD /* Protocols.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		BBAB9826222FC58E00D651BD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BBAB97F7222FC35E00D651BD /* HomeController.swift */,
+				BBAB982A222FC67F00D651BD /* MenuController.swift */,
+				BBAB982C222FC6BB00D651BD /* ContainerController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BBAB9827222FC5B900D651BD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BBAB9830222FC6D900D651BD /* MenuOption.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BBAB9829222FC5CC00D651BD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BBAB982E222FC6CF00D651BD /* MenuOptionCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +206,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBAB981A222FC35E00D651BD /* Build configuration list for PBXNativeTarget "tripmap" */;
 			buildPhases = (
+				23905131575335B338103C7F /* [CP] Check Pods Manifest.lock */,
 				BBAB97EE222FC35E00D651BD /* Sources */,
 				BBAB97EF222FC35E00D651BD /* Frameworks */,
 				BBAB97F0222FC35E00D651BD /* Resources */,
+				121F5349085CD1DD2F97146B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,6 +310,7 @@
 			files = (
 				BBAB9800222FC35E00D651BD /* LaunchScreen.storyboard in Resources */,
 				BBAB97FD222FC35E00D651BD /* Assets.xcassets in Resources */,
+				BBAB9824222FC38200D651BD /* Podfile in Resources */,
 				BBAB97FB222FC35E00D651BD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,13 +331,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		121F5349085CD1DD2F97146B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tripmap/Pods-tripmap-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tripmap/Pods-tripmap-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		23905131575335B338103C7F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tripmap-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BBAB97EE222FC35E00D651BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBAB97F8222FC35E00D651BD /* ViewController.swift in Sources */,
+				BBAB97F8222FC35E00D651BD /* HomeController.swift in Sources */,
+				BBAB9831222FC6D900D651BD /* MenuOption.swift in Sources */,
+				BBAB9833222FC6DF00D651BD /* Protocols.swift in Sources */,
+				BBAB982F222FC6CF00D651BD /* MenuOptionCell.swift in Sources */,
+				BBAB982B222FC67F00D651BD /* MenuController.swift in Sources */,
 				BBAB97F6222FC35E00D651BD /* AppDelegate.swift in Sources */,
+				BBAB982D222FC6BB00D651BD /* ContainerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +547,7 @@
 		};
 		BBAB981B222FC35E00D651BD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 912B300F6ED155B119C80327 /* Pods-tripmap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -439,6 +563,7 @@
 		};
 		BBAB981C222FC35E00D651BD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08348A66DA2AC509509087FA /* Pods-tripmap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
