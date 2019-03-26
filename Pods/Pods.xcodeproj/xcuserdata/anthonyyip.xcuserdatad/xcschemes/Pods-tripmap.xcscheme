@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "806639CBEB1E8DB019FE92909CE8C0E8"
+               BlueprintIdentifier = "8E944455C6B60BC7AB6A4A8EFF65C7CB"
                BuildableName = "libPods-tripmap.a"
                BlueprintName = "Pods-tripmap"
                ReferencedContainer = "container:Pods.xcodeproj">

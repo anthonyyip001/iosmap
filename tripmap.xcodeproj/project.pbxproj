@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		36659D414EE5F328E08E7D7D /* libPods-tripmap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F84981BDCA54F0D4C04D47FF /* libPods-tripmap.a */; };
+		BB12F9152233010800812D33 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB12F9142233010800812D33 /* LoginController.swift */; };
+		BB12F9172233012900812D33 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB12F9162233012900812D33 /* SignUpController.swift */; };
+		BB12F9192233014F00812D33 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB12F9182233014F00812D33 /* Extensions.swift */; };
+		BB636F422245FB77001F425E /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB636F412245FB77001F425E /* UserController.swift */; };
+		BB636F442246044E001F425E /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB636F432246044E001F425E /* CategoryCell.swift */; };
+		BB636F4622477C76001F425E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB636F4522477C76001F425E /* Models.swift */; };
+		BB8B68E0223312C100325A7E /* CountryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8B68DF223312C100325A7E /* CountryController.swift */; };
+		BB8B68E22233195500325A7E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB8B68E12233195500325A7E /* GoogleService-Info.plist */; };
+		BB8B68E522356A2600325A7E /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8B68E422356A2600325A7E /* Point.swift */; };
 		BBAB97F6222FC35E00D651BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAB97F5222FC35E00D651BD /* AppDelegate.swift */; };
 		BBAB97F8222FC35E00D651BD /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAB97F7222FC35E00D651BD /* HomeController.swift */; };
 		BBAB97FB222FC35E00D651BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBAB97F9222FC35E00D651BD /* Main.storyboard */; };
@@ -43,6 +52,16 @@
 /* Begin PBXFileReference section */
 		08348A66DA2AC509509087FA /* Pods-tripmap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tripmap.release.xcconfig"; path = "Target Support Files/Pods-tripmap/Pods-tripmap.release.xcconfig"; sourceTree = "<group>"; };
 		912B300F6ED155B119C80327 /* Pods-tripmap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tripmap.debug.xcconfig"; path = "Target Support Files/Pods-tripmap/Pods-tripmap.debug.xcconfig"; sourceTree = "<group>"; };
+		BB12F9142233010800812D33 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		BB12F9162233012900812D33 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		BB12F9182233014F00812D33 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BB636F412245FB77001F425E /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		BB636F432246044E001F425E /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		BB636F4522477C76001F425E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		BB8B68DF223312C100325A7E /* CountryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryController.swift; sourceTree = "<group>"; };
+		BB8B68E12233195500325A7E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BB8B68E32233195A00325A7E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BB8B68E422356A2600325A7E /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		BBAB97F2222FC35E00D651BD /* tripmap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tripmap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBAB97F5222FC35E00D651BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBAB97F7222FC35E00D651BD /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -112,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				BBAB9823222FC38200D651BD /* Podfile */,
+				BB8B68E12233195500325A7E /* GoogleService-Info.plist */,
 				BBAB97F4222FC35E00D651BD /* tripmap */,
 				BBAB9809222FC35E00D651BD /* tripmapTests */,
 				BBAB9814222FC35E00D651BD /* tripmapUITests */,
@@ -134,6 +154,7 @@
 		BBAB97F4222FC35E00D651BD /* tripmap */ = {
 			isa = PBXGroup;
 			children = (
+				BB8B68E32233195A00325A7E /* GoogleService-Info.plist */,
 				BBAB9829222FC5CC00D651BD /* View */,
 				BBAB9827222FC5B900D651BD /* Model */,
 				BBAB9826222FC58E00D651BD /* Controller */,
@@ -169,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				BBAB9832222FC6DF00D651BD /* Protocols.swift */,
+				BB12F9182233014F00812D33 /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -179,6 +201,10 @@
 				BBAB97F7222FC35E00D651BD /* HomeController.swift */,
 				BBAB982A222FC67F00D651BD /* MenuController.swift */,
 				BBAB982C222FC6BB00D651BD /* ContainerController.swift */,
+				BB12F9142233010800812D33 /* LoginController.swift */,
+				BB12F9162233012900812D33 /* SignUpController.swift */,
+				BB8B68DF223312C100325A7E /* CountryController.swift */,
+				BB636F412245FB77001F425E /* UserController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -187,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				BBAB9830222FC6D900D651BD /* MenuOption.swift */,
+				BB8B68E422356A2600325A7E /* Point.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -195,6 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				BBAB982E222FC6CF00D651BD /* MenuOptionCell.swift */,
+				BB636F432246044E001F425E /* CategoryCell.swift */,
+				BB636F4522477C76001F425E /* Models.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -310,6 +339,7 @@
 			files = (
 				BBAB9800222FC35E00D651BD /* LaunchScreen.storyboard in Resources */,
 				BBAB97FD222FC35E00D651BD /* Assets.xcassets in Resources */,
+				BB8B68E22233195500325A7E /* GoogleService-Info.plist in Resources */,
 				BBAB9824222FC38200D651BD /* Podfile in Resources */,
 				BBAB97FB222FC35E00D651BD /* Main.storyboard in Resources */,
 			);
@@ -341,11 +371,15 @@
 				"${PODS_ROOT}/Target Support Files/Pods-tripmap/Pods-tripmap-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -379,9 +413,17 @@
 			files = (
 				BBAB97F8222FC35E00D651BD /* HomeController.swift in Sources */,
 				BBAB9831222FC6D900D651BD /* MenuOption.swift in Sources */,
+				BB12F9172233012900812D33 /* SignUpController.swift in Sources */,
+				BB636F442246044E001F425E /* CategoryCell.swift in Sources */,
 				BBAB9833222FC6DF00D651BD /* Protocols.swift in Sources */,
+				BB8B68E0223312C100325A7E /* CountryController.swift in Sources */,
+				BB636F422245FB77001F425E /* UserController.swift in Sources */,
 				BBAB982F222FC6CF00D651BD /* MenuOptionCell.swift in Sources */,
+				BB12F9192233014F00812D33 /* Extensions.swift in Sources */,
+				BB636F4622477C76001F425E /* Models.swift in Sources */,
 				BBAB982B222FC67F00D651BD /* MenuController.swift in Sources */,
+				BB8B68E522356A2600325A7E /* Point.swift in Sources */,
+				BB12F9152233010800812D33 /* LoginController.swift in Sources */,
 				BBAB97F6222FC35E00D651BD /* AppDelegate.swift in Sources */,
 				BBAB982D222FC6BB00D651BD /* ContainerController.swift in Sources */,
 			);

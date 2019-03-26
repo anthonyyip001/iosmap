@@ -7,21 +7,45 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        FirebaseApp.configure()
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        
         window = UIWindow()
         window?.makeKeyAndVisible()
-        window?.rootViewController = ContainerController()
+//        let layout = UICollectionViewFlowLayout()
+//        let UsersController = UserController(collectionViewLayout: layout)
+        
+        
+        let navController = UINavigationController(rootViewController: CountryController())
+        navController.navigationBar.barStyle = .black
+        window?.rootViewController = navController
+        //window?.rootViewController = ContainerController()
+        
+        
         // Override point for customization after application launch.
         return true
     }
+    
+    
+//    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
+//        -> Bool {
+//            return GIDSignIn.sharedInstance().handle(url,
+//                                                     sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+//                                                     annotation: [:])
+//    }
+
+
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

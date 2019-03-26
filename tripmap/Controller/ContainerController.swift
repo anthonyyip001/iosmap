@@ -6,25 +6,145 @@
 //  Copyright © 2019 Anthony Yip. All rights reserved.
 //
 import UIKit
-import Foundation
+import Firebase
 
 class ContainerController: UIViewController{
     
     var menuController : MenuController!
     var centerController: UIViewController!
     var isExpanded = false
+    var detailedString: String!
+    var cityArrayto = Array<String>()
+    var pointArray = Array<Point>()
+    var pointNames = Array<String>()
+    var docRef : DocumentReference!
+    var countRef : CollectionReference!
+    var cityRefresh: String!
+    var homeController: HomeController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getCities()
+        navigationItem.title = detailedString!
+        configureNavigationBar()
+
         configureHomeController()
+        
+        
+    }
+    func configureNavigationBar() {
+        navigationController?.navigationBar.barTintColor = .darkGray
+        navigationController?.navigationBar.barStyle = .black
+        navigationController?.setNavigationBarHidden(true, animated: true)
+
+    }
+//    @objc func handleMenuToggle() {
+//        print("Toggle menu..")
+//        delegate?.handlMenuToggle(forMenuOption: nil)
+//    }
+//
+//    @objc func handleUserToggle() {
+//        print("Toggle user..")
+//
+//        let vc = UserController(collectionViewLayout: UICollectionViewFlowLayout())
+//        vc.country = detailedString!
+//        vc.userCategories = userCategories
+//        vc.featCategory = featCategory
+//
+//        navigationController?.pushViewController(vc, animated: true)
+//        navigationController?.setNavigationBarHidden(true, animated: true)
+//
+//
+//    }
+    
+    func getCities() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let db = Firestore.firestore()
+        countRef = db.collection("users/\(uid)/countries/\(detailedString!)/cities")
+        print("in getcities before addsnapshot: users/\(uid)/countries/\(detailedString!)/cities")
+        countRef.addSnapshotListener { QuerySnapshot, error in
+            guard let documents = QuerySnapshot?.documents else {
+                print("Error fetching documents: \(error!)")
+                return
+            }
+            print("in add snapshot")
+            let cities = documents.map {
+                print("cityarrayto size: \(self.cityArrayto.count)")
+                self.cityArrayto.append($0["city"]! as! String )
+                print("Current files in cityarray: \(self.cityArrayto.last!)")
+                
+            }
+            if self.cityArrayto.count != 0 {
+                print("Reloading")
+                print("Current files in cityarray: \(self.cityArrayto.count)")
+                
+            
+            }
+        }
+        
+        
+        
+    }
+    
+    func getPoints(cname : String) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        print("in getPoints: \(cname)")
+        pointArray.removeAll()
+        let db = Firestore.firestore()
+        countRef = db.collection("users/\(uid)/countries/\(detailedString!)/cities/\(cname)/points")
+        countRef.addSnapshotListener { QuerySnapshot, error in
+            guard let documents = QuerySnapshot?.documents else {
+                print("Error fetching documents: \(error!)")
+                return
+            }
+            
+            let cities = documents.map {
+                print("pointarray size: \(self.pointArray.count)")
+                let temp = Point()
+                temp.setName(city: $0["name"]! as! String)
+                self.pointNames.append($0["name"]! as! String)
+                temp.setAddress(city: $0["address"]! as! String )
+                temp.setLatitude(latitud: $0["latitude"]! as! String )
+                temp.setLongitude(longitud: $0["longitude"]! as! String )
+                self.pointArray.append(temp)
+                print("Current files in pointarray: \(self.pointArray.last!.getName())")
+                
+            }
+            if self.cityArrayto.count != 0 {
+                print("Reloading")
+                
+                self.homeController.pointArray = self.pointArray
+                self.homeController.cityNameto = cname
+                if(!self.homeController.markers.isEmpty){  //to clear map markers from map
+                    for (index, _) in self.homeController.markers.enumerated() {
+                        self.homeController.markers[index].map = nil
+                    }
+                }
+                
+                self.homeController.refreshMap()
+                //vc.refreshMap()
+                
+            }
+        }
+        
+        
+        
     }
     
     func configureHomeController(){
-        let homeController = HomeController()
+        
+        self.homeController = HomeController()
         homeController.delegate = self
+        homeController.country = detailedString
+        if cityRefresh != nil {
+            homeController.cityName = cityRefresh
+            
+        }
         centerController = UINavigationController(rootViewController: homeController)
         
         view.addSubview(centerController.view)
+        print("view count: \(view.subviews.count)")
+
         addChildViewController(centerController)
         centerController.didMove(toParentViewController: self)
         
@@ -37,6 +157,8 @@ class ContainerController: UIViewController{
         if menuController == nil{
             //render menu controller only once
             menuController = MenuController()
+            menuController.cityArray = cityArrayto
+            menuController.country = detailedString
             menuController.delegate = self
             view.insertSubview(menuController.view, at: 0)
             addChildViewController(menuController)
@@ -65,19 +187,12 @@ class ContainerController: UIViewController{
     }
     
     func didSelectMenuOption(menuOption: MenuOption){
-        switch menuOption{
-        //add code for stuff here
-        case .Profile:
-            print("Show profile")
-        case .Inbox:
-            print("Show inbox")
-        case .Notifications:
-            print("Show notification")
-        case .Settings:
-            print("Show setting")
-            
-            
-        }
+        let cityname = menuOption.getName()
+        
+        getPoints(cname: cityname)
+        
+        
+        
     }
     
 }
