@@ -21,6 +21,7 @@ class ContainerController: UIViewController{
     var countRef : CollectionReference!
     var cityRefresh: String!
     var homeController: HomeController!
+    var uid = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,10 +59,13 @@ class ContainerController: UIViewController{
 //    }
     
     func getCities() {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
+        if uid == ""{
+            uid = (Auth.auth().currentUser?.uid)!
+        }
+        
         let db = Firestore.firestore()
         countRef = db.collection("users/\(uid)/countries/\(detailedString!)/cities")
-        print("in getcities before addsnapshot: users/\(uid)/countries/\(detailedString!)/cities")
+        print("filepath cities: users/\(uid)/countries/\(detailedString!)/cities")
         countRef.addSnapshotListener { QuerySnapshot, error in
             guard let documents = QuerySnapshot?.documents else {
                 print("Error fetching documents: \(error!)")
@@ -87,11 +91,14 @@ class ContainerController: UIViewController{
     }
     
     func getPoints(cname : String) {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
+        if uid == ""{
+            uid = (Auth.auth().currentUser?.uid)!
+        }
         print("in getPoints: \(cname)")
         pointArray.removeAll()
         let db = Firestore.firestore()
         countRef = db.collection("users/\(uid)/countries/\(detailedString!)/cities/\(cname)/points")
+        print("users/\(uid)/countries/\(detailedString!)/cities/\(cname)/points")
         countRef.addSnapshotListener { QuerySnapshot, error in
             guard let documents = QuerySnapshot?.documents else {
                 print("Error fetching documents: \(error!)")

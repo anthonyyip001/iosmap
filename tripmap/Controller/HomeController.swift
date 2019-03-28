@@ -11,7 +11,7 @@ import GoogleMaps
 import Firebase
 import GooglePlaces
 
-class HomeController: UIViewController {
+class HomeController: UIViewController, GMUCluster {
     var delegate: HomeControllerDelegate?
     var country: String!
     var mapView : GMSMapView!
@@ -23,6 +23,10 @@ class HomeController: UIViewController {
     var markers = [GMSMarker]()
     var userCategories: [UserCategory]?
     var featCategory: UserCategory?
+    
+    //clustering
+    private var clusterManager : GMUClus
+    
     
     let floater: UIButton = {
         let floating = UIButton()
@@ -145,7 +149,9 @@ class HomeController: UIViewController {
         var lat = pointArray.first?.getLatitude().toDouble()!           //set camera around points in pointArray
         var long = pointArray.first?.getLongitude().toDouble()!
         var index = 1
-
+        
+        //Placing into clusters
+        
         for pont in pointArray {
             let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: Double(pont.getLatitude())!, longitude: Double(pont.getLongitude())!))
             marker.title = pont.getName()

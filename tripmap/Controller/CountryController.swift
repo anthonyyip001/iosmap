@@ -27,6 +27,7 @@ class CountryController: UIViewController, UITableViewDelegate, UITableViewDataS
     var docRef : DocumentReference!
     var countRef : CollectionReference!
     var uid = ""
+    var myuid : String?
     
     let tableView: UITableView = {
         let tv = UITableView()
@@ -60,7 +61,8 @@ class CountryController: UIViewController, UITableViewDelegate, UITableViewDataS
         super.viewDidLoad()
         
         if uid == ""{
-            uid = (Auth.auth().currentUser?.uid)!
+            myuid = (Auth.auth().currentUser?.uid)!
+            uid = myuid!
         }
         
             let db = Firestore.firestore()
@@ -200,6 +202,9 @@ class CountryController: UIViewController, UITableViewDelegate, UITableViewDataS
         print("Clicked on \(countryArray[indexPath.row])")
         let vc = ContainerController()
         vc.detailedString = countryArray[indexPath.row]
+        if uid != myuid{
+            vc.uid = uid
+        }
         
         
         navigationController?.pushViewController(vc, animated: true)
