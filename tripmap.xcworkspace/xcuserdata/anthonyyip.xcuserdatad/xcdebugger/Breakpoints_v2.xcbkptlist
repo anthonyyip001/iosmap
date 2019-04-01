@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tripmap/Controller/HomeController.swift"
-            timestampString = "575265851.636932"
+            timestampString = "575665638.324697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
             landmarkName = "loadUserData()"
             landmarkType = "7">
          </BreakpointContent>

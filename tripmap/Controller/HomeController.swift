@@ -11,7 +11,7 @@ import GoogleMaps
 import Firebase
 import GooglePlaces
 
-class HomeController: UIViewController, GMUCluster {
+class HomeController: UIViewController {
     var delegate: HomeControllerDelegate?
     var country: String!
     var mapView : GMSMapView!
@@ -25,7 +25,7 @@ class HomeController: UIViewController, GMUCluster {
     var featCategory: UserCategory?
     
     //clustering
-    private var clusterManager : GMUClus
+    //private var clusterManager : GMUClus
     
     
     let floater: UIButton = {
@@ -33,6 +33,14 @@ class HomeController: UIViewController, GMUCluster {
         floating.translatesAutoresizingMaskIntoConstraints = false
         floating.backgroundColor = .red
         floating.setTitle("add", for: .normal)
+        return floating
+    }()
+    
+    let floater2: UIButton = {
+        let floating = UIButton()
+        floating.translatesAutoresizingMaskIntoConstraints = false
+        floating.backgroundColor = .red
+        floating.setTitle("all", for: .normal)
         return floating
     }()
     
@@ -69,6 +77,15 @@ class HomeController: UIViewController, GMUCluster {
         
        floater.addTarget(self, action: #selector(btnAddTapp(sender:)), for: .touchUpInside)
         
+        view.addSubview(floater2)
+        floater2.heightAnchor.constraint(equalToConstant: 48).isActive = true
+        floater2.widthAnchor.constraint(equalToConstant: 48).isActive = true
+        
+        floater2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -370).isActive = true
+        floater2.bottomAnchor.constraint(equalTo: self.view.topAnchor, constant: 115).isActive = true
+        
+        floater2.addTarget(self, action: #selector(btnListTapp(sender:)), for: .touchUpInside)
+        
         configureNavigationBar()
         print("Configured NavBar")
         
@@ -83,6 +100,10 @@ class HomeController: UIViewController, GMUCluster {
         super.viewDidAppear(animated)
         //self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.configureNavigationBar()
+    }
+    @objc func btnListTapp(sender: UIButton){
+        print("list button tapped")
+        //add function to make popup appear
     }
     
     @objc func btnAddTapp(sender: UIButton){
