@@ -10,7 +10,7 @@ CLICKING ON BUTTON makes a a UICollectionView that holds a UITableView popup: ht
  
 So when button is clicked, the popup shown in pic(has round edges) is shown over map, and clicking on a point in the Popup UITableview closes the popup and centers the google map camera around that points lat and lng. P1, P2 ... being where the name is and the address of the place like underneath it. If possible the icon of the point on left of name and address with padding.
 
-Line 90 is where I would start since it is right after the user clicked on all button on map
+Line 106 in homecontroller is where I would start since it is right after the user clicked on all button on map
 
 
 Clustering part:
@@ -21,4 +21,4 @@ Like above, should be rendered after a UITableView element is clicked in side me
 can you setup clustering by making a marker that looks like one shown in pic for each point in the pointarray using its lat and lng and I will eventually make each point have a pic but for now can you make the pic a default pic.
 
 
-Line ___ is where I would start since it is right after the user clicked on element in side menu
+Line 174 in homecontroller is where I would start since it is right after the user clicked on element in side menu. Below is actually my attept at centering the camera around the points but my algorithm is messed up(currently calculates average of all points, bu t should probably use bounds of furthest points) up to you if you want to fix.
