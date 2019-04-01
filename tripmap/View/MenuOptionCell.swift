@@ -25,7 +25,7 @@ class MenuOptionCell: UITableViewCell {
         label.text = "Sample Text"
         return label
     }()
-
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         backgroundColor = .darkGray
@@ -37,11 +37,11 @@ class MenuOptionCell: UITableViewCell {
         iconImageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
         iconImageView.widthAnchor.constraint(equalToConstant: 24).isActive = true;
         
-       addSubview(descriptionLabel)
+        addSubview(descriptionLabel)
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false         //creating icon for each cell option menu
         descriptionLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         descriptionLabel.leftAnchor.constraint(equalTo: iconImageView.rightAnchor, constant: 12).isActive = true   //setting the text next to right anchor of icon
-       
+        
         
         
     }
@@ -49,5 +49,6 @@ class MenuOptionCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder: ) has not been implemented")
     }
-
+    
 }
+
