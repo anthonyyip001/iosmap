@@ -37,7 +37,7 @@ class CountryController: UIViewController, UITableViewDelegate, UITableViewDataS
     }()
     
     let floater: UIButton = {
-       let floating = UIButton()
+        let floating = UIButton()
         floating.translatesAutoresizingMaskIntoConstraints = false
         floating.backgroundColor = .red
         floating.setTitle("add", for: .normal)
@@ -60,36 +60,38 @@ class CountryController: UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if uid == ""{
-            myuid = (Auth.auth().currentUser?.uid)!
-            uid = myuid!
-        }
+        //
         
-            let db = Firestore.firestore()
+        let db = Firestore.firestore()
+        
+        if uid == ""{
+                        myuid = (Auth.auth().currentUser?.uid)!
+                        uid = myuid!
+        }
         countRef = db.collection("users").document(uid).collection("countries")
-            
-            countRef.addSnapshotListener { QuerySnapshot, error in
-                guard let documents = QuerySnapshot?.documents else {
-                    print("Error fetching documents: \(error!)")
-                    return
-                }
-                let countries = documents.map {
-                    self.countryArray.append($0["country"]! as! String )
-                    print("Current files in countries: \(self.countryArray.last!)")
-                    
-                }
-                
-                if self.countryArray.count != 0 {
-                    print("Reloading")
-                    self.tableView.reloadData()
-                }
-                
-                
-                //print("Current files in countries: \(self.countryArray.last)")
-                
-                //add update function here
+        
+        countRef.addSnapshotListener { QuerySnapshot, error in
+            guard let documents = QuerySnapshot?.documents else {
+                print("Error fetching documents: \(error!)")
+                return
+            }
+            let countries = documents.map {
+                self.countryArray.append($0["country"]! as! String )
+                print("Current files in countries: \(self.countryArray.last!)")
                 
             }
+            
+            if self.countryArray.count != 0 {
+                print("Reloading")
+                self.tableView.reloadData()
+            }
+            
+            
+            //print("Current files in countries: \(self.countryArray.last)")
+            
+            //add update function here
+            
+        }
         
         authenticateUserAndConfigureView()
         setupTableView()
@@ -127,7 +129,7 @@ class CountryController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         view.addSubview(tableView)
         tableView.addSubview(floater)
-    
+        
         tableView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         floater.heightAnchor.constraint(equalToConstant: 64).isActive = true
@@ -164,7 +166,7 @@ class CountryController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         
         
-       
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -195,7 +197,7 @@ class CountryController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-
+        
         return "Countries"
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -216,7 +218,7 @@ class CountryController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func loadUserData() {
         
-    
+        
         
     }
     
@@ -325,4 +327,5 @@ extension UIView{
     }
     
 }
+
 

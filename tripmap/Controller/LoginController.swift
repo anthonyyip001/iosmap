@@ -142,8 +142,8 @@ class LoginController: UIViewController, GIDSignInUIDelegate {
             }
             
             guard let navController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController else { return }
-            guard let controller = navController.viewControllers[0] as? HomeController else { return }
-            //controller.configureViewComponents()
+            guard let controller = navController.viewControllers[0] as? CountryController else { return }
+            controller.configureViewComponents()
             
             // forgot to add this in video
             controller.loadUserData()
