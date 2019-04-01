@@ -28,6 +28,7 @@ class CountryController: UIViewController, UITableViewDelegate, UITableViewDataS
     var countRef : CollectionReference!
     var uid = ""
     var myuid : String?
+    var uidcheck = false
     
     let tableView: UITableView = {
         let tv = UITableView()
@@ -60,41 +61,13 @@ class CountryController: UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //
         
-        let db = Firestore.firestore()
-        
-        if uid == ""{
-                        myuid = (Auth.auth().currentUser?.uid)!
-                        uid = myuid!
-        }
-        countRef = db.collection("users").document(uid).collection("countries")
-        
-        countRef.addSnapshotListener { QuerySnapshot, error in
-            guard let documents = QuerySnapshot?.documents else {
-                print("Error fetching documents: \(error!)")
-                return
-            }
-            let countries = documents.map {
-                self.countryArray.append($0["country"]! as! String )
-                print("Current files in countries: \(self.countryArray.last!)")
-                
-            }
-            
-            if self.countryArray.count != 0 {
-                print("Reloading")
-                self.tableView.reloadData()
-            }
-            
-            
-            //print("Current files in countries: \(self.countryArray.last)")
-            
-            //add update function here
-            
-        }
         
         authenticateUserAndConfigureView()
         setupTableView()
+       
+        
+        
         
         
     }
@@ -154,6 +127,7 @@ class CountryController: UIViewController, UITableViewDelegate, UITableViewDataS
             guard let country = textField?.text else { return }
             let db = Firestore.firestore()
             db.collection("users/\(uid)/countries").document(country).setData(["country": "\(country)"])
+            //added now need to reload uitableview
             
         }))
         let cancel = UIAlertAction(title: "Cancel", style: .default) { (alertAction) in }
@@ -216,11 +190,6 @@ class CountryController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     
-    func loadUserData() {
-        
-        
-        
-    }
     
     func signOut() {
         do {
@@ -235,15 +204,51 @@ class CountryController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func authenticateUserAndConfigureView() {
         if Auth.auth().currentUser == nil {
+            print("no user")
             DispatchQueue.main.async {
                 let navController = UINavigationController(rootViewController: LoginController())
                 navController.navigationBar.barStyle = .black
                 self.present(navController, animated: true, completion: nil)
+                self.uidcheck = true
             }
         } else {
+            print("found user")
+            getCountries()
             configureViewComponents()
-            loadUserData()
         }
+    }
+    
+    func getCountries() {
+        let db = Firestore.firestore()
+        
+            myuid = (Auth.auth().currentUser?.uid)!
+            uid = myuid!
+            
+            
+            //print("Current files in countries: \(self.countryArray.last)")
+            
+            //add update function here
+        
+        countRef = db.collection("users").document(uid).collection("countries")
+        
+        countRef.addSnapshotListener { QuerySnapshot, error in
+            guard let documents = QuerySnapshot?.documents else {
+                print("Error fetching documents: \(error!)")
+                return
+            }
+            let countries = documents.map {
+                self.countryArray.append($0["country"]! as! String )
+                print("Current files in countries: \(self.countryArray.last!)")
+                
+            }
+            
+            if self.countryArray.count != 0 {
+                print("Reloading")
+                self.tableView.reloadData()
+            }
+            
+        }
+        
     }
     
     // MARK: - Helper Functions

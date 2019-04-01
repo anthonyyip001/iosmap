@@ -26,8 +26,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let layout = UICollectionViewFlowLayout()
 //        let UsersController = UserController(collectionViewLayout: layout)
         
-        
-        let navController = UINavigationController(rootViewController: CountryController())
+        // check if login or not
+        var controller: UIViewController
+        //if Auth.auth().currentUser == nil {
+         //   controller = LoginController()
+        //} else {
+            controller = CountryController()
+        //}
+        let navController = UINavigationController(rootViewController: controller)
         navController.navigationBar.barStyle = .black
         window?.rootViewController = navController
         //window?.rootViewController = ContainerController()

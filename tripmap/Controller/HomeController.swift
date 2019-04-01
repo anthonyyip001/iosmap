@@ -172,7 +172,7 @@ class HomeController: UIViewController {
         var index = 1
         
         //Placing into clusters
-        
+        showClusters()
         for pont in pointArray {
             let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: Double(pont.getLatitude())!, longitude: Double(pont.getLongitude())!))
             marker.title = pont.getName()
@@ -196,6 +196,10 @@ class HomeController: UIViewController {
                                                   zoom: 10)
             mapView.camera = camera
         }
+    }
+    
+    func showClusters() {
+        ///bllab
     }
     
 }

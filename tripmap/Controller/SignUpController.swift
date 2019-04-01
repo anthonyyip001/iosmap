@@ -180,7 +180,7 @@ class SignUpController: UIViewController, GIDSignInUIDelegate {
                 controller.configureViewComponents()
                 
                 // forgot to add this in video
-                controller.loadUserData()
+                //controller.loadUserData()
                 
                 self.dismiss(animated: true, completion: nil)
             })
