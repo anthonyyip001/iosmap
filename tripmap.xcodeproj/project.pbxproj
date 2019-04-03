@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2619B75B2253D9F20083F150 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2619B75A2253D9F20083F150 /* GoogleService-Info.plist */; };
+		2619B75D2253DA610083F150 /* CityListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2619B75C2253DA610083F150 /* CityListView.swift */; };
+		2619B7652253DB360083F150 /* knExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2619B7632253DB360083F150 /* knExtensions.swift */; };
+		2619B7662253DB360083F150 /* UIMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2619B7622253DB360083F150 /* UIMaker.swift */; };
+		2619B7672253DB360083F150 /* knConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2619B7642253DB360083F150 /* knConstraints.swift */; };
+		2619B7692253DBA00083F150 /* knPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2619B7682253DBA00083F150 /* knPopup.swift */; };
+		2619B76B2253DC040083F150 /* knListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2619B76A2253DC040083F150 /* knListView.swift */; };
 		36659D414EE5F328E08E7D7D /* libPods-tripmap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F84981BDCA54F0D4C04D47FF /* libPods-tripmap.a */; };
 		BB12F9152233010800812D33 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB12F9142233010800812D33 /* LoginController.swift */; };
 		BB12F9172233012900812D33 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB12F9162233012900812D33 /* SignUpController.swift */; };
@@ -18,7 +25,6 @@
 		BB636F4C2251CDFD001F425E /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB636F4B2251CDFD001F425E /* MenuOption.swift */; };
 		BB636F4E2251CE2F001F425E /* MenuOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB636F4D2251CE2F001F425E /* MenuOptionCell.swift */; };
 		BB636F502251D327001F425E /* CountryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB636F4F2251D327001F425E /* CountryController.swift */; };
-		BB8B68E22233195500325A7E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB8B68E12233195500325A7E /* GoogleService-Info.plist */; };
 		BB8B68E522356A2600325A7E /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8B68E422356A2600325A7E /* Point.swift */; };
 		BBAB97F6222FC35E00D651BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAB97F5222FC35E00D651BD /* AppDelegate.swift */; };
 		BBAB97F8222FC35E00D651BD /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAB97F7222FC35E00D651BD /* HomeController.swift */; };
@@ -51,6 +57,13 @@
 
 /* Begin PBXFileReference section */
 		08348A66DA2AC509509087FA /* Pods-tripmap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tripmap.release.xcconfig"; path = "Target Support Files/Pods-tripmap/Pods-tripmap.release.xcconfig"; sourceTree = "<group>"; };
+		2619B75A2253D9F20083F150 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		2619B75C2253DA610083F150 /* CityListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListView.swift; sourceTree = "<group>"; };
+		2619B7622253DB360083F150 /* UIMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMaker.swift; sourceTree = "<group>"; };
+		2619B7632253DB360083F150 /* knExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = knExtensions.swift; path = codebase/knExtensions.swift; sourceTree = "<group>"; };
+		2619B7642253DB360083F150 /* knConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = knConstraints.swift; sourceTree = "<group>"; };
+		2619B7682253DBA00083F150 /* knPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = knPopup.swift; sourceTree = "<group>"; };
+		2619B76A2253DC040083F150 /* knListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = knListView.swift; sourceTree = "<group>"; };
 		912B300F6ED155B119C80327 /* Pods-tripmap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tripmap.debug.xcconfig"; path = "Target Support Files/Pods-tripmap/Pods-tripmap.debug.xcconfig"; sourceTree = "<group>"; };
 		BB12F9142233010800812D33 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		BB12F9162233012900812D33 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
@@ -62,8 +75,6 @@
 		BB636F4B2251CDFD001F425E /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
 		BB636F4D2251CE2F001F425E /* MenuOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionCell.swift; sourceTree = "<group>"; };
 		BB636F4F2251D327001F425E /* CountryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryController.swift; sourceTree = "<group>"; };
-		BB8B68E12233195500325A7E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		BB8B68E32233195A00325A7E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BB8B68E422356A2600325A7E /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		BBAB97F2222FC35E00D651BD /* tripmap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tripmap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBAB97F5222FC35E00D651BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				BBAB9823222FC38200D651BD /* Podfile */,
-				BB8B68E12233195500325A7E /* GoogleService-Info.plist */,
 				BBAB97F4222FC35E00D651BD /* tripmap */,
 				BBAB9809222FC35E00D651BD /* tripmapTests */,
 				BBAB9814222FC35E00D651BD /* tripmapUITests */,
@@ -154,7 +164,7 @@
 		BBAB97F4222FC35E00D651BD /* tripmap */ = {
 			isa = PBXGroup;
 			children = (
-				BB8B68E32233195A00325A7E /* GoogleService-Info.plist */,
+				2619B75A2253D9F20083F150 /* GoogleService-Info.plist */,
 				BBAB9829222FC5CC00D651BD /* View */,
 				BBAB9827222FC5B900D651BD /* Model */,
 				BBAB9826222FC58E00D651BD /* Controller */,
@@ -189,6 +199,11 @@
 		BBAB9825222FC58100D651BD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2619B7682253DBA00083F150 /* knPopup.swift */,
+				2619B76A2253DC040083F150 /* knListView.swift */,
+				2619B7632253DB360083F150 /* knExtensions.swift */,
+				2619B7642253DB360083F150 /* knConstraints.swift */,
+				2619B7622253DB360083F150 /* UIMaker.swift */,
 				BB636F49224E7604001F425E /* Protocols.swift */,
 				BB12F9182233014F00812D33 /* Extensions.swift */,
 			);
@@ -224,6 +239,7 @@
 				BB636F432246044E001F425E /* CategoryCell.swift */,
 				BB636F4522477C76001F425E /* Models.swift */,
 				BB636F4D2251CE2F001F425E /* MenuOptionCell.swift */,
+				2619B75C2253DA610083F150 /* CityListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -339,7 +355,7 @@
 			files = (
 				BBAB9800222FC35E00D651BD /* LaunchScreen.storyboard in Resources */,
 				BBAB97FD222FC35E00D651BD /* Assets.xcassets in Resources */,
-				BB8B68E22233195500325A7E /* GoogleService-Info.plist in Resources */,
+				2619B75B2253D9F20083F150 /* GoogleService-Info.plist in Resources */,
 				BBAB9824222FC38200D651BD /* Podfile in Resources */,
 				BBAB97FB222FC35E00D651BD /* Main.storyboard in Resources */,
 			);
@@ -411,20 +427,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2619B75D2253DA610083F150 /* CityListView.swift in Sources */,
+				2619B7652253DB360083F150 /* knExtensions.swift in Sources */,
 				BBAB97F8222FC35E00D651BD /* HomeController.swift in Sources */,
 				BB12F9172233012900812D33 /* SignUpController.swift in Sources */,
 				BB636F442246044E001F425E /* CategoryCell.swift in Sources */,
 				BB636F422245FB77001F425E /* UserController.swift in Sources */,
 				BB12F9192233014F00812D33 /* Extensions.swift in Sources */,
 				BB636F4622477C76001F425E /* Models.swift in Sources */,
+				2619B76B2253DC040083F150 /* knListView.swift in Sources */,
 				BB636F4C2251CDFD001F425E /* MenuOption.swift in Sources */,
 				BBAB982B222FC67F00D651BD /* MenuController.swift in Sources */,
 				BB8B68E522356A2600325A7E /* Point.swift in Sources */,
 				BB12F9152233010800812D33 /* LoginController.swift in Sources */,
 				BBAB97F6222FC35E00D651BD /* AppDelegate.swift in Sources */,
 				BB636F4E2251CE2F001F425E /* MenuOptionCell.swift in Sources */,
+				2619B7672253DB360083F150 /* knConstraints.swift in Sources */,
 				BB636F502251D327001F425E /* CountryController.swift in Sources */,
 				BBAB982D222FC6BB00D651BD /* ContainerController.swift in Sources */,
+				2619B7692253DBA00083F150 /* knPopup.swift in Sources */,
+				2619B7662253DB360083F150 /* UIMaker.swift in Sources */,
 				BB636F4A224E7604001F425E /* Protocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -103,7 +103,78 @@ class HomeController: UIViewController {
     }
     @objc func btnListTapp(sender: UIButton){
         print("list button tapped")
-        //add function to make popup appear
+        let cityView = CityListPopup()
+
+        let datasource = [
+            City(name: "Ho Chi Minh",
+                 description: "Hello this is Ho Chi Minh City",
+                 point: CLLocationCoordinate2D(latitude: 10.769810,
+                                               longitude: 106.681363)),
+            City(name: "Ha Noi",
+                 description: "Welcome to Ha Noi",
+                 point: CLLocationCoordinate2D(latitude: 10.780994,
+                                               longitude: 106.731364)),
+            City(name: "Da Nang",
+                 description: "This is the best city",
+                 point: CLLocationCoordinate2D(latitude: 10.758435,
+                                               longitude: 106.556458)),
+            City(name: "Ho Chi Minh",
+                 description: "Hello this is Ho Chi Minh City",
+                 point: CLLocationCoordinate2D(latitude: 10.769810,
+                                               longitude: 106.681363)),
+            City(name: "Ha Noi",
+                 description: "Welcome to Ha Noi",
+                 point: CLLocationCoordinate2D(latitude: 10.780994,
+                                               longitude: 106.731364)),
+            City(name: "Da Nang",
+                 description: "This is the best city",
+                 point: CLLocationCoordinate2D(latitude: 10.758435,
+                                               longitude: 106.556458)),
+            City(name: "Ho Chi Minh",
+                 description: "Hello this is Ho Chi Minh City",
+                 point: CLLocationCoordinate2D(latitude: 10.769810,
+                                               longitude: 106.681363)),
+            City(name: "Ha Noi",
+                 description: "Welcome to Ha Noi",
+                 point: CLLocationCoordinate2D(latitude: 10.780994,
+                                               longitude: 106.731364)),
+            City(name: "Da Nang",
+                 description: "This is the best city",
+                 point: CLLocationCoordinate2D(latitude: 10.758435,
+                                               longitude: 106.556458)),
+            City(name: "Ho Chi Minh",
+                 description: "Hello this is Ho Chi Minh City",
+                 point: CLLocationCoordinate2D(latitude: 10.769810,
+                                               longitude: 106.681363)),
+            City(name: "Ha Noi",
+                 description: "Welcome to Ha Noi",
+                 point: CLLocationCoordinate2D(latitude: 10.780994,
+                                               longitude: 106.731364)),
+            City(name: "Da Nang",
+                 description: "This is the best city",
+                 point: CLLocationCoordinate2D(latitude: 10.758435,
+                                               longitude: 106.556458)),
+        ]
+        cityView.setData(data: datasource)
+
+        cityView.selectAction = { [weak self] city in
+            self?.dropMarker(city: city)
+        }
+        cityView.show(in: view)
+    }
+
+    func dropMarker(city: City) {
+        guard let point = city.point else { return }
+        let marker = GMSMarker(position: point)
+        marker.icon = UIImage(named: "strictd_marker")
+        marker.title = city.name
+        marker.snippet = city.description
+        marker.map = mapView
+        markers.append(marker)
+        let camera = GMSCameraPosition.camera(withLatitude: point.latitude,
+                                              longitude: point.longitude,
+                                              zoom: 20)
+        mapView.camera = camera
     }
     
     @objc func btnAddTapp(sender: UIButton){
