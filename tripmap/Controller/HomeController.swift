@@ -24,6 +24,9 @@ class HomeController: UIViewController {
     var userCategories: [UserCategory]?
     var featCategory: UserCategory?
     
+    
+    //city for popup and point on map
+    var datasource = [City]()
     //clustering
     //private var clusterManager : GMUClus
     
@@ -31,16 +34,18 @@ class HomeController: UIViewController {
     let floater: UIButton = {
         let floating = UIButton()
         floating.translatesAutoresizingMaskIntoConstraints = false
-        floating.backgroundColor = .red
-        floating.setTitle("add", for: .normal)
+        floating.backgroundColor = .clear
+        let icon = UIImage(named: "addpo")
+        floating.setImage(icon, for: .normal)
         return floating
     }()
     
     let floater2: UIButton = {
         let floating = UIButton()
         floating.translatesAutoresizingMaskIntoConstraints = false
-        floating.backgroundColor = .red
-        floating.setTitle("all", for: .normal)
+        floating.backgroundColor = .white
+        let icon = UIImage(named: "viewall")
+        floating.setImage(icon, for: .normal)
         return floating
     }()
     
@@ -72,8 +77,8 @@ class HomeController: UIViewController {
         view.addSubview(floater)
         floater.heightAnchor.constraint(equalToConstant: 64).isActive = true
         floater.widthAnchor.constraint(equalToConstant: 64).isActive = true
-        floater.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -100).isActive = true
-        floater.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -36).isActive = true
+        floater.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -310).isActive = true
+        floater.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -60).isActive = true
         
        floater.addTarget(self, action: #selector(btnAddTapp(sender:)), for: .touchUpInside)
         
@@ -81,8 +86,8 @@ class HomeController: UIViewController {
         floater2.heightAnchor.constraint(equalToConstant: 48).isActive = true
         floater2.widthAnchor.constraint(equalToConstant: 48).isActive = true
         
-        floater2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -370).isActive = true
-        floater2.bottomAnchor.constraint(equalTo: self.view.topAnchor, constant: 115).isActive = true
+        floater2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -330).isActive = true
+        floater2.bottomAnchor.constraint(equalTo: self.view.topAnchor, constant: 135).isActive = true
         
         floater2.addTarget(self, action: #selector(btnListTapp(sender:)), for: .touchUpInside)
         
@@ -103,58 +108,14 @@ class HomeController: UIViewController {
     }
     @objc func btnListTapp(sender: UIButton){
         print("list button tapped")
+        if cityNameto == nil{
+            print("no cityname")
+            return
+        }
+        
+        
         let cityView = CityListPopup()
 
-        let datasource = [
-            City(name: "Ho Chi Minh",
-                 description: "Hello this is Ho Chi Minh City",
-                 point: CLLocationCoordinate2D(latitude: 10.769810,
-                                               longitude: 106.681363)),
-            City(name: "Ha Noi",
-                 description: "Welcome to Ha Noi",
-                 point: CLLocationCoordinate2D(latitude: 10.780994,
-                                               longitude: 106.731364)),
-            City(name: "Da Nang",
-                 description: "This is the best city",
-                 point: CLLocationCoordinate2D(latitude: 10.758435,
-                                               longitude: 106.556458)),
-            City(name: "Ho Chi Minh",
-                 description: "Hello this is Ho Chi Minh City",
-                 point: CLLocationCoordinate2D(latitude: 10.769810,
-                                               longitude: 106.681363)),
-            City(name: "Ha Noi",
-                 description: "Welcome to Ha Noi",
-                 point: CLLocationCoordinate2D(latitude: 10.780994,
-                                               longitude: 106.731364)),
-            City(name: "Da Nang",
-                 description: "This is the best city",
-                 point: CLLocationCoordinate2D(latitude: 10.758435,
-                                               longitude: 106.556458)),
-            City(name: "Ho Chi Minh",
-                 description: "Hello this is Ho Chi Minh City",
-                 point: CLLocationCoordinate2D(latitude: 10.769810,
-                                               longitude: 106.681363)),
-            City(name: "Ha Noi",
-                 description: "Welcome to Ha Noi",
-                 point: CLLocationCoordinate2D(latitude: 10.780994,
-                                               longitude: 106.731364)),
-            City(name: "Da Nang",
-                 description: "This is the best city",
-                 point: CLLocationCoordinate2D(latitude: 10.758435,
-                                               longitude: 106.556458)),
-            City(name: "Ho Chi Minh",
-                 description: "Hello this is Ho Chi Minh City",
-                 point: CLLocationCoordinate2D(latitude: 10.769810,
-                                               longitude: 106.681363)),
-            City(name: "Ha Noi",
-                 description: "Welcome to Ha Noi",
-                 point: CLLocationCoordinate2D(latitude: 10.780994,
-                                               longitude: 106.731364)),
-            City(name: "Da Nang",
-                 description: "This is the best city",
-                 point: CLLocationCoordinate2D(latitude: 10.758435,
-                                               longitude: 106.556458)),
-        ]
         cityView.setData(data: datasource)
 
         cityView.selectAction = { [weak self] city in
@@ -166,7 +127,7 @@ class HomeController: UIViewController {
     func dropMarker(city: City) {
         guard let point = city.point else { return }
         let marker = GMSMarker(position: point)
-        marker.icon = UIImage(named: "strictd_marker")
+        marker.icon = UIImage(named: city.icon!)
         marker.title = city.name
         marker.snippet = city.description
         marker.map = mapView
@@ -221,7 +182,7 @@ class HomeController: UIViewController {
         navigationController?.navigationBar.barStyle = .black
         navigationItem.title = country
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_menu_white_3x").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleMenuToggle))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_menu_white_3x").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleUserToggle))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "feat").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleUserToggle))
         
     }
     
@@ -245,32 +206,44 @@ class HomeController: UIViewController {
         //Placing into clusters
         showClusters()
         for pont in pointArray {
-            let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: Double(pont.getLatitude())!, longitude: Double(pont.getLongitude())!))
-            marker.title = pont.getName()
-            marker.map = mapView
-            if(index != 1){
-                lat = lat! + pont.getLatitude().toDouble()!
-                long = long! + pont.getLongitude().toDouble()!
-                index = index + 1
-                
-            }
-            markers.append(marker)
+//            let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: Double(pont.getLatitude())!, longitude: Double(pont.getLongitude())!))
+//            marker.title = pont.getName()
+//            marker.map = mapView
+//            if(index != 1){
+//                lat = lat! + pont.getLatitude().toDouble()!
+//                long = long! + pont.getLongitude().toDouble()!
+//                index = index + 1
+//
+//            }
+//            markers.append(marker)
             print(pont)
             
         }
         
-        if(!pointArray.isEmpty){
-            lat = lat! / Double(pointArray.count)
-            long = long! / Double(pointArray.count)
-            let camera = GMSCameraPosition.camera(withLatitude: lat!,
-                                                  longitude: long!,
-                                                  zoom: 10)
-            mapView.camera = camera
-        }
+//        if(!pointArray.isEmpty){
+//            lat = lat! / Double(pointArray.count)
+//            long = long! / Double(pointArray.count)
+//            let camera = GMSCameraPosition.camera(withLatitude: lat!,
+//                                                  longitude: long!,
+//                                                  zoom: 10)
+//            mapView.camera = camera
+//        }
     }
     
     func showClusters() {
-        ///bllab
+        for i in pointArray{
+            let j = City(name: i.name,
+                         description: "Directions to \(i.name!)?",
+                point: CLLocationCoordinate2D(latitude: i.latitude.toDouble()!,
+                                              longitude: i.longitude.toDouble()!),
+                icon: i.getIcon())
+            datasource.append(j)
+            
+        }
+        
+        for i in datasource{
+            self.dropMarker(city: i)
+        }
     }
     
 }
@@ -313,7 +286,8 @@ extension HomeController: GMSAutocompleteViewControllerDelegate {
             db.collection("users/\(self.uid!)/countries/\(self.country!)/cities/\(self.cityNameto!)/points").document(place.name!).setData(["name": "\(place.name!)" ,
                 "address": "\(place.formattedAddress!)",
                 "latitude": "\(place.coordinate.latitude)",
-                "longitude": "\(place.coordinate.longitude)"
+                "longitude": "\(place.coordinate.longitude)",
+                "avatar": "default"
                 ])
             
         }))

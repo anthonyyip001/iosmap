@@ -9,36 +9,7 @@
 import UIKit
 
 extension UIView {
-    
-    func addConstraint(attribute: NSLayoutConstraint.Attribute, equalTo view: UIView, toAttribute: NSLayoutConstraint.Attribute, multiplier: CGFloat = 1, constant: CGFloat = 0) -> NSLayoutConstraint {
-        let myConstraint = NSLayoutConstraint(item: self, attribute: attribute, relatedBy: .equal, toItem: view, attribute: toAttribute, multiplier: multiplier, constant: constant)
-        return myConstraint
-    }
-    
-    func addConstraints(withFormat format: String, views: UIView...) {
-        var viewsDictionary = [String: UIView]()
-        
-        for i in 0 ..< views.count {
-            let key = "v\(i)"
-            views[i].translatesAutoresizingMaskIntoConstraints = false
-            viewsDictionary[key] = views[i]
-        }
-        
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: viewsDictionary))
-    }
-    
-    func addConstraints(withFormat format: String, arrayOf views: [UIView]) {
-        var viewsDictionary = [String: UIView]()
-        
-        for i in 0 ..< views.count {
-            let key = "v\(i)"
-            views[i].translatesAutoresizingMaskIntoConstraints = false
-            viewsDictionary[key] = views[i]
-        }
-        
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: viewsDictionary))
-    }
-    
+
     func removeAllConstraints() {
         removeConstraints(constraints)
     }

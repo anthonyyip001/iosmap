@@ -23,8 +23,9 @@ class MenuController: UIViewController{
     let floater: UIButton = {
         let floating = UIButton()
         floating.translatesAutoresizingMaskIntoConstraints = false
-        floating.backgroundColor = .red
-        floating.setTitle("add", for: .normal)
+        floating.backgroundColor = .clear
+        let icon = UIImage(named: "addc")
+        floating.setImage(icon, for: .normal)
         return floating
     }()
     

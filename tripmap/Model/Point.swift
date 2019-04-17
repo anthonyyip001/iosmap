@@ -14,6 +14,7 @@ class Point  {
     var address : String!
     var latitude : String!
     var longitude : String!
+    var icon : String!
     
     
     func setName(city : String) {
@@ -22,6 +23,13 @@ class Point  {
     }
     func getName() -> String{
         return name
+    }
+    func setIcon(city : String) {
+        icon = city
+        
+    }
+    func getIcon() -> String {
+        return icon
     }
     func setAddress(city : String) {
         address = city

@@ -45,11 +45,13 @@ class City {
     var name: String
     var description: String?
     var point: CLLocationCoordinate2D?
+    var icon: String?
 
-    init(name: String, description: String?, point: CLLocationCoordinate2D) {
+    init(name: String, description: String?, point: CLLocationCoordinate2D, icon: String?) {
         self.name = name
         self.point = point
         self.description = description
+        self.icon = icon
     }
 
     init(name: String) {

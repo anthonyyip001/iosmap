@@ -31,7 +31,7 @@ class UIMaker {
     }
     
     static func makeImageView(image: UIImage? = nil,
-                              contentMode: UIView.ContentMode = .scaleAspectFit) -> UIImageView {
+                              contentMode: UIViewContentMode = .scaleAspectFit) -> UIImageView {
         let iv = UIImageView(image: image)
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.contentMode = contentMode

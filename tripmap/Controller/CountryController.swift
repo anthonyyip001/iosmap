@@ -40,8 +40,10 @@ class CountryController: UIViewController, UITableViewDelegate, UITableViewDataS
     let floater: UIButton = {
         let floating = UIButton()
         floating.translatesAutoresizingMaskIntoConstraints = false
-        floating.backgroundColor = .red
-        floating.setTitle("add", for: .normal)
+        floating.backgroundColor = .white
+        let icon = UIImage(named: "addc")
+        floating.setImage(icon, for: .normal)
+        //floating.setTitle("add", for: .normal)
         return floating
     }()
     

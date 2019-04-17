@@ -113,6 +113,7 @@ class ContainerController: UIViewController{
                 temp.setAddress(city: $0["address"]! as! String )
                 temp.setLatitude(latitud: $0["latitude"]! as! String )
                 temp.setLongitude(longitud: $0["longitude"]! as! String )
+                temp.setIcon(city: $0["avatar"]! as! String)
                 self.pointArray.append(temp)
                 print("Current files in pointarray: \(self.pointArray.last!.getName())")
                 
@@ -129,8 +130,6 @@ class ContainerController: UIViewController{
                 }
                 
                 self.homeController.refreshMap()
-                //vc.refreshMap()
-                
             }
         }
         
